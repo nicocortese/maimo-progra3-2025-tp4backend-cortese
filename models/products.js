@@ -4,8 +4,8 @@ const Schema = mongoose.Schema;
 const productSchema = new Schema({
   name: { type: String },
   images: { type: [String] },
+  brand: { type: String },
   price: { type: Number },
-  discount: { type: Number },
   sizes: { type: [Number] },
   stockBySize: {
     type: Map,

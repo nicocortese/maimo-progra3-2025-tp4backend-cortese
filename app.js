@@ -4,6 +4,7 @@ import cors from "cors";
 import indexRoutes from "./routes/index.js";
 import productsRoutes from "./routes/products.js";
 import categoriesRoutes from "./routes/categories.js";
+import ordersRoutes from "./routes/orders.js";
 
 /* Clear the console  */
 console.log("\x1Bc");
@@ -39,6 +40,7 @@ app.use(
 app.use("/", indexRoutes);
 app.use("/products", productsRoutes);
 app.use("/categories", categoriesRoutes)
+app.use("/orders", ordersRoutes)
 
 /* Error handler  */
 // catch 404 and forward to error handler

@@ -38,7 +38,7 @@ router.get("/:key", async (req, res) => {
  
     const products = await (await import("../models/products.js")).default
       .find({ categories: category._id })
-      .select("_id name categories")
+      .select("_id name images categories")
       .populate("categories", "name slug");
  
     return res.status(200).send({
