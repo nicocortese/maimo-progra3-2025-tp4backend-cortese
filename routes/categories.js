@@ -17,7 +17,6 @@ router.post("/", async (req, res) => {
  
 // Listar categorías (simple)
 router.get("/", async (_req, res) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
   try {
     const categories = await Category.find().select("_id name slug");
     return res.status(200).send({ message: "Todas las categorías", categories });
