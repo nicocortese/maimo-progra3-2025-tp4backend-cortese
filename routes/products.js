@@ -3,6 +3,7 @@ const router = express.Router();
 import Product from "../models/products.js";
 
 const findAllProducts = async (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "*")
   try {
     const products = await Product.find().select("_id name price categories images");
     return res
@@ -14,6 +15,7 @@ const findAllProducts = async (req, res) => {
 };
 
 const findOneProduct = async (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
   const { id } = req.params;
   try {
     const product = await Product.findOne({ _id: id }).select(
@@ -26,6 +28,7 @@ const findOneProduct = async (req, res) => {
 };
 
 const addProduct = async (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
   const {
     name,
     images,
@@ -67,6 +70,7 @@ const addProduct = async (req, res) => {
 };
 
 const deleteProduct = async (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "*"); 
   const { id } = req.params;
   try {
     const productToDelete = await Product.findOne({ _id: id });
@@ -84,6 +88,7 @@ const deleteProduct = async (req, res) => {
 };
 
 const updateProduct = async (req, res) => {
+   res.setHeader("Access-Control-Allow-Origin", "*");
   const { id } = req.params;
   const { name, price, categories, images, brand, sizes, stockBySize, gender, color, style, material, sole, description, rating } = req.body;
   try {
