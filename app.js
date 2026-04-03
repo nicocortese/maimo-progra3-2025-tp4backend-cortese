@@ -24,15 +24,10 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin:
-      process.env.NODE_ENV === "local"
-        ? [`http://${process.env.FRONT_URL}`]
-        : [
-            `https://${process.env.FRONT_URL}`,
-            `https://www.${process.env.FRONT_URL}`,
-          ],
+    origin: [
+      "https://retro-kicks.vercel.app",
+    ],
     credentials: true,
-    exposedHeaders: "Authorization",
   })
 );
 
