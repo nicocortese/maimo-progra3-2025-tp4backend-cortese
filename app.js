@@ -24,10 +24,10 @@ app.use(
 );
 
 /* Routes */
-app.use("/", indexRoutes);
-app.use("/products", productsRoutes);
-app.use("/categories", categoriesRoutes);
-app.use("/orders", ordersRoutes);
+app.use("/api/", indexRoutes);
+app.use("/api/products", productsRoutes);
+app.use("/api/categories", categoriesRoutes);
+app.use("/api/orders", ordersRoutes);
 
 /* Error handler */
 app.use(function (req, res, next) {
